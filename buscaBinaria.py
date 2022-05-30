@@ -4,15 +4,12 @@ from shutil import which
 import struct
 import sys
 
-
 registroCEP = struct.Struct("72s72s72s72s2s8s2s")
 ufColumn = 5
 
-
 with open("cep_ordenado.dat","rb") as f:
-
     f.seek(0, 2)
-    tb =f.tell()
+    tb = f.tell()
     tr = tb // registroCEP.size
     inicio = 0
     fim = tr-1
